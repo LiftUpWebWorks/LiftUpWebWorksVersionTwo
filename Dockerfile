@@ -5,10 +5,10 @@ EXPOSE 443
 
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
-COPY ["Shift Up WebHoster/Shift Up WebHoster.csproj", "Shift Up WebHoster/"]
-RUN dotnet restore "Shift Up WebHoster/Shift Up WebHoster.csproj"
+COPY ["ShiftUpWebHoster/Shift Up WebHoster.csproj", "ShiftUpWebHoster/"]
+RUN dotnet restore "ShiftUpWebHoster/Shift Up WebHoster.csproj"
 COPY . .
-WORKDIR "/src/Shift Up WebHoster"
+WORKDIR "/src/ShiftUpWebHoster"
 RUN dotnet build "Shift Up WebHoster.csproj" -c Release -o /app/build
 
 FROM build AS publish
