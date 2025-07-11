@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <!-- LiftUp Logo -->
+  <style>
+    .text { font-family: Arial, sans-serif; font-weight: bold; }
+    .dark-text { fill: #1e2a35; }
+  </style>
+  
+  <!-- Main Text: LiftUp -->
+  <text x="50" y="300" class="text dark-text" font-size="120">Lift</text>
+  <text x="230" y="300" class="text dark-text" font-size="120">U</text>
+  
+  <!-- Arrow pointing up -->
+  <polygon points="320,180 370,100 420,180" class="dark-text" />
+  <rect x="370" y="180" width="50" height="120" class="dark-text" />
+  
+  <!-- Finishing the text -->
+  <text x="420" y="300" class="text dark-text" font-size="120">p</text>
+  
+  <!-- WEBWORKS text below -->
+  <text x="50" y="380" class="text dark-text" font-size="70">WEBWORKS</text>
+</svg>

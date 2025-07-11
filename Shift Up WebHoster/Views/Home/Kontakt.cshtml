@@ -1,0 +1,106 @@
+@{
+    ViewData["Title"] = "Kontakt";
+}
+@model ContactFormModel
+
+<div class="container py-3 kontakt-page">
+    <div class="row">
+        <div class="col-lg-6 mb-4">
+            <h1 class="display-4 mb-4">Kontaktieren Sie uns</h1>
+            <p class="lead">Wir freuen uns darauf, von Ihnen zu hören und Ihre Projekte zu unterstützen.</p>
+            
+            <div class="mt-4">
+                <h3>Kontaktdaten</h3>
+                <p><strong>Adresse:</strong><br>
+Lift Up WebWorks<br>
+Bahnhofstraße 63<br>
+89231 Neu-Ulm</p>
+                
+                <p><strong>E-Mail:</strong><br>
+info@liftup-webworks.de</p>
+                
+                <p><strong>Geschäftszeiten:</strong><br>
+Mo. - Fr.: 08:00 - 17:00 Uhr</p>
+            </div>
+        </div>
+        
+        <div class="col-lg-6">
+            <div class="card shadow-sm">
+                <div class="card-body p-4">
+                    <h3 class="card-title mb-4">Kontaktformular</h3>
+                    @if (TempData["SuccessMessage"] != null)
+                    {
+                        <div class="alert alert-success" role="alert">
+                            @TempData["SuccessMessage"]
+                        </div>
+                    }
+
+                    <form asp-action="Kontakt" method="post">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <div class="mb-3">
+                            <label asp-for="Name" class="form-label">Name *</label>
+                            <input asp-for="Name" class="form-control" />
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Email" class="form-label">E-Mail *</label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Phone" class="form-label">Telefon (optional)</label>
+                            <input asp-for="Phone" class="form-control" data-val="false" aria-required="false" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Subject" class="form-label">Betreff *</label>
+                            <input asp-for="Subject" class="form-control" />
+                            <span asp-validation-for="Subject" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label asp-for="Message" class="form-label">Nachricht *</label>
+                            <textarea asp-for="Message" class="form-control" rows="5"></textarea>
+                            <span asp-validation-for="Message" class="text-danger"></span>
+                        </div>
+                        
+                        <div class="mb-3 form-check">
+                            <input asp-for="AcceptPrivacyPolicy" class="form-check-input" />
+                            <label asp-for="AcceptPrivacyPolicy" class="form-check-label">
+                                Mit dem Absenden des Formulars stimme ich zu, dass meine Angaben zur Kontaktaufnahme und für Rückfragen gespeichert werden. Die Daten werden ausschließlich für die Bearbeitung meiner Anfrage verwendet und nach Abschluss gelöscht. Weitere Informationen finden Sie in unserer <a href="/Home/Privacy" class="text-primary">Datenschutzerklärung</a>. *
+                            </label>
+                            <span asp-validation-for="AcceptPrivacyPolicy" class="text-danger"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        $(document).ready(function() {
+            // Deaktiviere die Validierung für das Telefonfeld
+            $("#Phone").rules("remove");
+            
+            // Zusätzliche Validierung für das Datenschutz-Checkbox
+            $("form").submit(function(event) {
+                if (!$("#AcceptPrivacyPolicy").is(":checked")) {
+                    $("#AcceptPrivacyPolicy").addClass("input-validation-error");
+                    $("#AcceptPrivacyPolicy").siblings(".text-danger").text("Bitte stimmen Sie der Datenschutzerklärung zu.");
+                    event.preventDefault();
+                    return false;
+                }
+                return true;
+            });
+        });
+    </script>
+}

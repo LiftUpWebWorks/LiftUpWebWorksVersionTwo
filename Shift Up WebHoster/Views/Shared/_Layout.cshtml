@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Lift Up - Ihr Partner für moderne IT-Dienstleistungen, Webhosting und professionelles Webdesign" />
+    <meta name="keywords" content="Webhosting, IT-Consulting, App-Entwicklung, Webdesign, IT-Dienstleistungen" />
+    <meta name="author" content="Lift Up" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="@ViewData["Title"] - Lift Up" />
+    <meta property="og:description" content="Lift Up - Ihr Partner für moderne IT-Dienstleistungen, Webhosting und professionelles Webdesign" />
+    <title>@ViewData["Title"] - Lift Up</title>
+    <link rel="icon" href="~/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate icon" href="~/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Shift_Up_WebHoster.styles.css" asp-append-version="true" />
+
+    <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="stylesheet" href="~/css/klaro.css" asp-append-version="true" />
+    <!-- Klaro Cookie Consent Manager -->
+    <script type="application/javascript" src="~/js/klaro-config.js"></script>
+    <script type="application/javascript" src="~/js/klaro.js"></script>
+    <script>
+        // Globale Funktion definieren, bevor DOMContentLoaded ausgelöst wird
+        function showCookieAtScrollPosition() {
+            console.log('Cookie-Einstellungen Button wurde geklickt');
+            if (window.klaro) {
+                // Immer anzeigen, wenn der Button geklickt wird, unabhängig vom Cookie-Status
+                window.klaro.show();
+                
+                // Dann die Position anpassen
+                setTimeout(function() {
+                    var cookieNotice = document.querySelector('.cookie-notice');
+                    if (cookieNotice) {
+                        // Sicherstellen, dass das Cookie-Banner sichtbar ist
+                        cookieNotice.classList.add('cookie-notice-visible');
+                        cookieNotice.style.display = 'block';
+                        cookieNotice.style.opacity = '1';
+                        cookieNotice.style.visibility = 'visible';
+                        // Zum Anfang der Seite scrollen, damit der Banner sichtbar ist
+                        window.scrollTo({ top: 0, behavior: 'auto' });
+                    } else {
+                        console.log('Cookie-Notice Element nicht gefunden');
+                    }
+                }, 100);
+            } else {
+                console.log('Klaro ist nicht verfügbar');
+                // Versuche, Klaro zu initialisieren, falls es noch nicht geladen ist
+                setTimeout(function() {
+                    if (window.klaro) {
+                        window.klaro.show();
+                        // Sicherstellen, dass das Cookie-Banner sichtbar ist
+                        var cookieNotice = document.querySelector('.cookie-notice');
+                        if (cookieNotice) {
+                            cookieNotice.classList.add('cookie-notice-visible');
+                            cookieNotice.style.display = 'block';
+                            cookieNotice.style.opacity = '1';
+                            cookieNotice.style.visibility = 'visible';
+                            // Zum Anfang der Seite scrollen, damit der Banner sichtbar ist
+                            window.scrollTo({ top: 0, behavior: 'auto' });
+                        }
+                    } else {
+                        console.log('Klaro konnte nicht initialisiert werden');
+                    }
+                }, 500);
+            }
+        }
+        
+        // Funktion global verfügbar machen
+        window.showCookieAtScrollPosition = showCookieAtScrollPosition;
+    </script>
+</head>
+<body>
+    <header style="margin-bottom: 0;">
+        <nav class="navbar navbar-expand-sm navbar-dark border-bottom box-shadow">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span class="text-gradient">Lift Up WebWorks</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Index" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Start</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Kontakt" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Kontakt">Kontakt</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"]?.ToString() == "Bewertungen" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Bewertungen">Bewertungen</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container" style="margin-top: 0;">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer bg-light py-4" style="margin-top: 1rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h5>Lift Up</h5>
+                    <p class="text-muted">Ihr Partner für moderne IT-Dienstleistungen, Webhosting und professionelles Webdesign.</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Kontakt</h5>
+                    <p class="text-muted">
+                        <strong>E-Mail:</strong> info@liftup-webworks.de
+                    </p>
+                    <div class="social-icons mt-2">
+                        <a href="https://facebook.com/liftupwebworks" target="_blank" rel="noopener" class="text-muted me-3"><i class="fab fa-facebook fa-lg"></i></a>
+                        <a href="https://instagram.com/liftupwebworks" target="_blank" rel="noopener" class="text-muted me-3"><i class="fab fa-instagram fa-lg"></i></a>
+                        <a href="https://linkedin.com/company/liftupwebworks" target="_blank" rel="noopener" class="text-muted me-3"><i class="fab fa-linkedin fa-lg"></i></a>
+                        <a href="https://xing.com/pages/liftupwebworks" target="_blank" rel="noopener" class="text-muted"><i class="fab fa-xing fa-lg"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h5>Links</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Index">Start</a></li>
+                                <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Kontakt">Kontakt</a></li>
+                                <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Bewertungen">Bewertungen</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Impressum">Impressum</a></li>
+                                <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Privacy">Datenschutzerklärung</a></li>
+                                <li><a class="text-muted" href="javascript:window.showCookieAtScrollPosition();">Cookie-Einstellungen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="text-center text-muted">
+                &copy; @DateTime.Now.Year - Lift Up - Alle Rechte vorbehalten
+            </div>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/js/validation-localization.js" asp-append-version="true"></script>
+    <script src="~/js/particles.min.js" asp-append-version="true"></script>
+    <script src="~/js/particles-config.js" asp-append-version="true"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                AOS.init({
+                    duration: 800,
+                    easing: 'ease-out-cubic',
+                    once: true,
+                    mirror: false,
+                    offset: 50,
+                    delay: 100,
+                    anchorPlacement: 'top-bottom'
+                });
+            });
+        function activateJourneyItem(element) {
+            document.querySelectorAll('.journey-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        function activateValueItem(element) {
+            document.querySelectorAll('.value-item').forEach(item => item.classList.remove('active'));
+            element.classList.add('active');
+            
+            // Spezielle Animation für das Kundenorientierung-Icon, wenn es aktiviert wird
+            if (element.querySelector('i.fa-users')) {
+                const icon = element.querySelector('i.fa-users');
+                // Kurze Animation zum Hervorheben des Icons
+                icon.style.transition = 'transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55)';
+                icon.style.transform = 'scale(1.3)';
+                
+                // Nach der Animation zurücksetzen
+                setTimeout(() => {
+                    icon.style.transform = '';
+                }, 500);
+            }
+        }
+        
+        // Funktion, um die Überschriften dauerhaft auszuwählen, wenn die Maus im jeweiligen Bereich ist
+        document.addEventListener('DOMContentLoaded', function() {
+            // Stil für die aktive Überschrift hinzufügen
+            const style = document.createElement('style');
+            style.textContent = `
+                .heading-active {
+                    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), transparent);
+                    border-color: #0d6efd;
+                    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
+                    transform: translateY(-5px);
+                }
+                
+                .section-active {
+                    border: 2px solid rgba(13, 110, 253, 0.3);
+                    border-radius: 1rem;
+                    box-shadow: 0 0 15px rgba(13, 110, 253, 0.2);
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Für den Bereich "Innovation trifft Leidenschaft"
+            const founderContent = document.querySelector('.founder-content');
+            if (founderContent) {
+                // Überschrift hervorheben
+                const founderHeading = founderContent.querySelector('h2');
+                
+                // Wenn die Maus in den Bereich kommt
+                founderContent.addEventListener('mouseenter', function() {
+                    // Überschrift als aktiv markieren
+                    if (founderHeading) {
+                        founderHeading.classList.add('heading-active');
+                    }
+                    
+                    // Bereich als aktiv markieren
+                    this.classList.add('section-active');
+                    
+                    // Erstes Element aktivieren
+                    const firstJourneyItem = this.querySelector('.journey-item');
+                    if (firstJourneyItem) {
+                        activateJourneyItem(firstJourneyItem);
+                    }
+                });
+                
+                // Wenn die Maus den Bereich verlässt
+                founderContent.addEventListener('mouseleave', function() {
+                    // Überschrift und Bereich bleiben aktiv
+                    // Nichts tun, damit die Überschrift dauerhaft ausgewählt bleibt
+                });
+            }
+            
+            // Für den Bereich "Digitale Exzellenz neu definiert"
+            const companyContent = document.querySelector('.company-content');
+            if (companyContent) {
+                // Überschrift hervorheben
+                const companyHeading = companyContent.querySelector('h2');
+                
+                // Wenn die Maus in den Bereich kommt
+                companyContent.addEventListener('mouseenter', function() {
+                    // Überschrift als aktiv markieren
+                    if (companyHeading) {
+                        companyHeading.classList.add('heading-active');
+                    }
+                    
+                    // Bereich als aktiv markieren
+                    this.classList.add('section-active');
+                    
+                    // Erstes Element aktivieren
+                    const firstValueItem = this.querySelector('.value-item');
+                    if (firstValueItem) {
+                        activateValueItem(firstValueItem);
+                    }
+                });
+                
+                // Wenn die Maus den Bereich verlässt
+                companyContent.addEventListener('mouseleave', function() {
+                    // Überschrift und Bereich bleiben aktiv
+                    // Nichts tun, damit die Überschrift dauerhaft ausgewählt bleibt
+                });
+            }
+        });
+    </script>
+    <script src="~/js/validation-localization.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Klaro manuell initialisieren
+            if (window.klaro) {
+                window.klaro.setup(klaroConfig);
+                console.log('Klaro wurde erfolgreich initialisiert');
+                
+                // Überprüfen, ob der Privacy-Link korrekt funktioniert
+                console.log('Privacy Policy URL:', klaroConfig.privacyPolicy);
+                console.log('Privacy Policy URL in translations:', klaroConfig.translations.de.privacyPolicyUrl);
+                
+                // Sicherstellen, dass das Cookie-Banner sofort sichtbar ist
+                var cookieNotice = document.querySelector('.cookie-notice');
+                if (cookieNotice) {
+                    cookieNotice.classList.add('cookie-notice-visible');
+                    cookieNotice.style.display = 'block';
+                    cookieNotice.style.opacity = '1';
+                    cookieNotice.style.visibility = 'visible';
+                }
+            } else {
+                // Fallback, falls Klaro nicht sofort verfügbar ist
+                setTimeout(function() {
+                    if (window.klaro) {
+                        window.klaro.setup(klaroConfig);
+                        console.log('Klaro wurde mit Verzögerung initialisiert');
+                        
+                        // Überprüfen, ob der Privacy-Link korrekt funktioniert
+                        console.log('Privacy Policy URL:', klaroConfig.privacyPolicy);
+                        console.log('Privacy Policy URL in translations:', klaroConfig.translations.de.privacyPolicyUrl);
+                        
+                        // Sicherstellen, dass das Cookie-Banner sofort sichtbar ist
+                        var cookieNotice = document.querySelector('.cookie-notice');
+                        if (cookieNotice) {
+                            cookieNotice.classList.add('cookie-notice-visible');
+                            cookieNotice.style.display = 'block';
+                            cookieNotice.style.opacity = '1';
+                            cookieNotice.style.visibility = 'visible';
+                        }
+                    } else {
+                        console.log('Klaro konnte nicht initialisiert werden');
+                    }
+                }, 1000);
+            }
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

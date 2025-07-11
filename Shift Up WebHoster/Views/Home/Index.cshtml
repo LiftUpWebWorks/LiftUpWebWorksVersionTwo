@@ -1,0 +1,190 @@
+@{
+    ViewData["Title"] = "Start";
+}
+
+<div class="position-relative overflow-hidden p-3 p-md-5 text-center hero-section">
+    <div id="particles-js" class="particles-container"></div>
+    <div class="hero-content col-md-8 p-lg-5 mx-auto my-5" data-aos="fade-up" data-aos-duration="1200">
+        <h1 class="display-4 fw-bold text-white hero-title">Willkommen bei <span class="text-gradient">Lift Up WebWorks</span></h1>
+        <p class="lead fw-normal hero-subtitle">Ihr Partner für Weblösungen, die mitdenken, überzeugen und begeistern!</p>
+        <div class="hero-buttons">
+            <a class="btn btn-primary btn-glow btn-lg me-3" asp-controller="Home" asp-action="Kontakt">Kontaktieren Sie uns</a>
+            <a class="btn btn-outline-light btn-lg" href="#services">Unsere Leistungen</a>
+        </div>
+        
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="row g-4 py-5" id="services">
+        <div class="col-md-4">
+            <div class="card service-card h-100 shadow-sm" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
+                <div class="card-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Web-Entwicklung</h3>
+                    <p class="card-text">Innovative und benutzerfreundliche Websiten für Ihr Unternehmen. Von der Konzeption bis zur Umsetzung.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Responsive Design</span>
+                        <span class="feature-tag">SEO-Optimierung</span>
+                        <span class="feature-tag">Moderne Frameworks</span>
+                    </div>
+
+                </div>
+                <div class="card-shape"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card h-100 shadow-sm" data-aos="fade-up" data-aos-duration="800" data-aos-delay="200">
+                <div class="card-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">IT-Consulting</h3>
+                    <p class="card-text">Professionelle Beratung für Ihre IT-Projekte. Wir analysieren Ihre Anforderungen und entwickeln maßgeschneiderte Lösungen.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">Strategieberatung</span>
+                        <span class="feature-tag">Technologie-Auswahl</span>
+                        <span class="feature-tag">Prozessoptimierung</span>
+                    </div>
+
+                </div>
+                <div class="card-shape"></div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card service-card h-100 shadow-sm" data-aos="fade-left" data-aos-duration="800" data-aos-delay="300">
+                <div class="card-icon">
+                    <i class="fas fa-server"></i>
+                </div>
+                <div class="card-body">
+                    <h3 class="card-title">Webhosting</h3>
+                    <p class="card-text">Zuverlässiges und schnelles Hosting für Ihre Webprojekte. Wir bieten modernste Serverinfrastruktur und exzellenten Support.</p>
+                    <div class="card-features">
+                        <span class="feature-tag">99.9% Uptime</span>
+                        <span class="feature-tag">SSL-Zertifikate</span>
+                        <span class="feature-tag">Tägliche Backups</span>
+                    </div>
+
+                </div>
+                <div class="card-shape"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row py-5">
+        <div class="col-12 text-center mb-5">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Unsere Geschichte & Werte</h2>
+        </div>
+    </div>
+
+    <div class="row py-3 founder-section">
+        <div class="col-lg-6 d-flex">
+            <div class="founder-content flex-fill" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="header-icon"><i class="fas fa-lightbulb"></i></div>
+                        <h2 class="mb-0">Innovation trifft Leidenschaft</h2>
+                    </div>
+                    <div class="founder-journey">
+                        <div class="journey-item active" onmouseover="activateJourneyItem(this)">
+                            <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="journey-content">
+                                <h4>Duales Studium & Tech-Enthusiast</h4>
+                                <p>Mit der perfekten Kombination aus akademischem Wissen und praktischer Erfahrung bringe ich frische Perspektiven in die Webentwicklung. Meine Leidenschaft für Technologie treibt mich an, innovative Lösungen zu entwickeln.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item" onmouseover="activateJourneyItem(this)">
+                            <div class="journey-icon"><i class="fas fa-code"></i></div>
+                            <div class="journey-content">
+                                <h4>Erfahrener Entwickler</h4>
+                                <p>Durch jahrelange Erfahrung in verschiedenen IT-Projekten weiß ich genau, worauf es bei modernen digitalen Lösungen ankommt. Qualität und Nachhaltigkeit stehen dabei immer im Fokus.</p>
+                            </div>
+                        </div>
+                        <div class="journey-item" onmouseover="activateJourneyItem(this)">
+                            <div class="journey-icon"><i class="fas fa-rocket rocket-icon"></i></div>
+                            <div class="journey-content">
+                                <h4>Zukunftsgestalter</h4>
+                                <p>Mit einem klaren Blick für Innovation und dem Mut, neue Wege zu gehen, entwickle ich Lösungen, die nicht nur heute funktionieren, sondern auch für die Anforderungen von morgen gerüstet sind.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tech-stack mt-4">
+                        <div class="stack-title">Technologie-Stack</div>
+                        <div class="tech-badges">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS3</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">.NET</span>
+                            <span class="tech-badge">Azure</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 d-flex">
+            <div class="company-content flex-fill" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="content-card">
+                    <div class="card-header">
+                        <div class="header-icon"><i class="fas fa-star"></i></div>
+                        <h2 class="mb-0">Digitale Exzellenz neu definiert</h2>
+                    </div>
+                    <div class="company-values">
+                        <div class="value-item active" onmouseover="activateValueItem(this)">
+                            <div class="value-icon"><i class="fas fa-heart"></i></div>
+                            <div class="value-content">
+                                <h4>Leidenschaft & Innovation</h4>
+                                <p>Als junges, dynamisches Unternehmen verbinden wir moderne IT-Dienstleistungen mit Herz und Verstand. Unsere Leidenschaft für Technologie spiegelt sich in jedem Projekt wider.</p>
+                            </div>
+                        </div>
+                        <div class="value-item" onmouseover="activateValueItem(this)">
+                            <div class="value-icon"><i class="fas fa-users"></i></div>
+                            <div class="value-content">
+                                <h4>Kundenorientierung</h4>
+                                <p>Bei uns sind Sie keine Nummer. Wir bieten maßgeschneiderte Webseiten und persönlichen Support, der sich wirklich an Ihren Bedürfnissen orientiert. Wir hören zu, beraten ehrlich und setzen Ihre Vision um.</p>
+                            </div>
+                        </div>
+                        <div class="value-item" onmouseover="activateValueItem(this)">
+                            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="value-content">
+                                <h4>Qualität & Zuverlässigkeit</h4>
+                                <p>Mit leistungsstarkem Webhosting und zukunftssicheren Technologien sorgen wir dafür, dass Ihre Website schnell, sicher und zuverlässig funktioniert – heute und morgen.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="company-highlights mt-4">
+                        <div class="highlights-title">Unsere Stärken</div>
+                        <div class="highlight-badges">
+                            <div class="highlight-badge">
+                                <i class="fas fa-comments"></i>
+                                <span>Transparente Kommunikation</span>
+                            </div>
+                            <div class="highlight-badge">
+                                <i class="fas fa-handshake"></i>
+                                <span>Partnerschaftliche Zusammenarbeit</span>
+                            </div>
+                            <div class="highlight-badge">
+                                <i class="fas fa-chart-line"></i>
+                                <span>Wachstumsorientiert</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row py-5 motto-section">
+        <div class="col-12">
+            <div class="motto-container" data-aos="zoom-in" data-aos-duration="1000">
+                <div class="motto-background"></div>
+                <div class="motto-content text-center">
+                    <p class="company-motto">Lift Up WebWorks – <span class="motto-highlight">Ihr Partner für Weblösungen</span>, die <strong>mitdenken</strong>, <strong>überzeugen</strong> und <strong>begeistern</strong>!</p>
+                    <div class="motto-action text-center">
+                        <a href="#" class="btn btn-light" style="font-size: 1.2rem; padding: 0.6rem 1.8rem;">Jetzt durchstarten</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

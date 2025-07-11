@@ -1,0 +1,64 @@
+@{    ViewData["Title"] = "Bewertungen";}
+
+<link rel="stylesheet" href="~/css/review.css" />
+
+<div class="container py-5">
+    <h1 class="text-center mb-4" style="margin-top: 40px; font-size: 3.2rem; font-weight: 700;">Unser Qualitätsversprechen</h1>
+    <p class="text-center mb-5" style="font-size: 1.3rem;">Qualität und Service für Ihren Erfolg - Ihre Meinung ist uns wichtig</p>
+    <div class="row g-4">
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="quality-icon me-3">
+                            <i class="fas fa-cog fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="card-title mb-1">Qualitätsgarantie</h5>
+                            <small class="text-muted">Entwicklung & Support</small>
+                        </div>
+                    </div>
+                    <ul class="card-text quality-list">
+                        <li><i class="fas fa-check text-success"></i> Professionelle Projektbetreuung von Anfang bis Ende</li>
+                        <li><i class="fas fa-check text-success"></i> Regelmäßige Updates und Wartung</li>
+                        <li><i class="fas fa-check text-success"></i> Transparente Kommunikation und Dokumentation</li>
+                        <li><i class="fas fa-check text-success"></i> Einhaltung von Best Practices und Standards</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card h-100 shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="quality-icon me-3">
+                            <i class="fas fa-shield-alt fa-2x text-primary"></i>
+                        </div>
+                        <div>
+                            <h5 class="card-title mb-1">Service-Garantie</h5>
+                            <small class="text-muted">Hosting & Verfügbarkeit</small>
+                        </div>
+                    </div>
+                    <ul class="card-text quality-list">
+                        <li><i class="fas fa-check text-success"></i> 99,9% garantierte Server-Verfügbarkeit</li>
+                        <li><i class="fas fa-check text-success"></i> Tägliche Backups Ihrer Daten</li>
+                        <li><i class="fas fa-check text-success"></i> SSL-Verschlüsselung inklusive</li>
+                        <li><i class="fas fa-check text-success"></i> 24/7 Server-Monitoring</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <p class="lead mb-4">Teilen Sie Ihre Erfahrungen mit Lift Up WebWorks</p>
+        <button class="btn btn-primary btn-lg" data-bs-toggle="modal" data-bs-target="#reviewModal">Bewertung abgeben</button>
+    </div>
+</div>
+
+@await Html.PartialAsync("ReviewModal")
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
