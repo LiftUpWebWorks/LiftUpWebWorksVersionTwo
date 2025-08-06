@@ -14,16 +14,23 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: rgba(13, 110, 253, 0.1);
+    background: #2e8b57; /* Kräftiges Grün für besseren Kontrast mit weißen Icons */
     transition: transform 0.3s ease, background 0.3s ease;
     /* Verhindert Unschärfe bei Transformationen */
     backface-visibility: hidden;
+    color: white; /* Icon-Farbe auf weiß gesetzt */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translateZ(0); /* Hardware-Beschleunigung erzwingen */
     filter: blur(0);
     will-change: transform, background;
     animation: pulse-bg 2s infinite;
+}
+
+/* Überschreibe die Bootstrap text-primary Klasse für Icons in quality-icon */
+.quality-icon .text-primary,
+.quality-icon i {
+    color: white !important;
 }
 
 /* Animation für das Zahnrad */
@@ -48,9 +55,9 @@
 }
 
 @keyframes pulse-bg {
-    0% { background: rgba(13, 110, 253, 0.1); }
-    50% { background: rgba(13, 110, 253, 0.2); }
-    100% { background: rgba(13, 110, 253, 0.1); }
+    0% { background: #2e8b57; }
+    50% { background: #3cb371; } /* Etwas helleres Grün */
+    100% { background: #2e8b57; }
 }
 
 .card {
@@ -83,12 +90,12 @@
 
 .quality-list li:hover {
     transform: translateX(5px);
-    color: #0d6efd;
+    color: #2e8b57;
 }
 
 .quality-list li:hover i {
     transform: scale(1.2);
-    color: #0d6efd;
+    color: #2e8b57;
 }
 
 .quality-list li i {
@@ -189,8 +196,8 @@
 
 .form-control:focus,
 .form-select:focus {
-    border-color: #80bdff !important;
-    box-shadow: 0 0 0 0.2rem rgba(0,123,255,0.25) !important;
+    border-color: #8fd3a8 !important;
+    box-shadow: 0 0 0 0.2rem rgba(46,139,87,0.25) !important;
 }
 
 /* Styling für die Sternebewertung */
@@ -236,5 +243,14 @@
     
     .modal-dialog {
         margin: 0.5rem !important;
+    }
+    
+    /* Kleinere Überschrift auf mobilen Geräten */
+    .container.py-5 h1 {
+        font-size: 2.2rem !important;
+    }
+    
+    .container.py-5 p {
+        font-size: 1.1rem !important;
     }
 }

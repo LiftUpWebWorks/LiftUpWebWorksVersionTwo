@@ -1,0 +1,246 @@
+/* Zusätzlicher Abstand für die Bewertungs- und Kontaktseite */
+.container.py-5 {
+    margin-top: 60px;
+}
+
+.container.py-3.kontakt-page {
+    margin-top: 30px;
+}
+
+.quality-icon {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #2e8b57; /* Kräftiges Grün für besseren Kontrast mit weißen Icons */
+    transition: transform 0.3s ease, background 0.3s ease;
+    /* Verhindert Unschärfe bei Transformationen */
+    backface-visibility: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transform: translateZ(0); /* Hardware-Beschleunigung erzwingen */
+    filter: blur(0);
+    will-change: transform, background;
+    animation: pulse-bg 2s infinite;
+}
+
+/* Überschreibe die Bootstrap text-primary Klasse für Icons in quality-icon */
+.quality-icon .text-primary,
+.quality-icon i {
+    color: white !important;
+}
+
+/* Animation für das Zahnrad */
+.quality-icon .fa-cog {
+    animation: spin 8s linear infinite;
+}
+
+/* Animation für das Schild */
+.quality-icon .fa-shield-alt {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+@keyframes pulse-bg {
+    0% { background: #2e8b57; }
+    50% { background: #3cb371; } /* Etwas helleres Grün */
+    100% { background: #2e8b57; }
+}
+
+.card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 30px;
+    background-color: #fff;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.quality-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.quality-list li {
+    margin-bottom: 10px;
+    padding-left: 30px;
+    position: relative;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.quality-list li:hover {
+    transform: translateX(5px);
+    color: #2e8b57;
+}
+
+.quality-list li:hover i {
+    transform: scale(1.2);
+    color: #2e8b57;
+}
+
+.quality-list li i {
+    transition: transform 0.2s ease, color 0.2s ease;
+    position: absolute;
+    left: 0;
+    top: 3px;
+}
+
+/* Modal Styling */
+.modal.fade .modal-dialog {
+    backface-visibility: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    transform: translateZ(0) !important;
+    transform-style: flat !important;
+    transition: none !important;
+    /* Stellt sicher, dass das Modal scrollbar ist */
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 1.75rem auto !important;
+    overflow: visible !important;
+}
+
+.modal-content {
+    border: none !important;
+    border-radius: 15px !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2) !important;
+    /* Verhindert Unschärfe bei Transformationen */
+    backface-visibility: hidden !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    transform: translateZ(0) !important;
+    transform-style: flat !important;
+    transition: none !important;
+    /* Stellt sicher, dass das Modal scrollbar ist */
+    max-height: 90vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    height: auto !important;
+}
+
+.modal-body {
+    overflow-y: auto !important;
+    max-height: calc(90vh - 120px) !important;
+    padding: 1rem !important;
+    display: block !important;
+}
+
+.modal-header {
+    border-bottom: 1px solid #eee !important;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%) !important;
+    border-radius: 15px 15px 0 0 !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+
+.modal-footer {
+    border-top: 1px solid #eee !important;
+    background: #f8f9fa !important;
+    border-radius: 0 0 15px 15px !important;
+    padding: 1rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+}
+
+.form-control,
+.form-select {
+    display: block !important;
+    width: 100% !important;
+    padding: 0.375rem 0.75rem !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    color: #495057 !important;
+    background-color: #fff !important;
+    background-clip: padding-box !important;
+    border: 1px solid #ced4da !important;
+    border-radius: 0.25rem !important;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out !important;
+}
+
+.modal-body .mb-3 {
+    margin-bottom: 1rem !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.modal-body .form-label {
+    display: block !important;
+    margin-bottom: 0.5rem !important;
+    font-weight: 500 !important;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #8fd3a8 !important;
+    box-shadow: 0 0 0 0.2rem rgba(46,139,87,0.25) !important;
+}
+
+/* Styling für die Sternebewertung */
+.star-rating {
+    direction: rtl !important;
+    display: inline-block !important;
+    padding: 0 !important;
+    margin-bottom: 0.5rem !important;
+}
+
+.star-rating input {
+    display: none !important;
+}
+
+.star-rating label {
+    color: #ddd !important;
+    font-size: 2rem !important;
+    padding: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: inline-block !important;
+    margin-right: 0.25rem !important;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: #f8b739 !important;
+}
+
+.text-danger {
+    color: #dc3545 !important;
+    font-size: 0.875rem !important;
+    margin-top: 0.25rem !important;
+    display: block !important;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 576px) {
+    .star-rating label {
+        font-size: 24px !important;
+    }
+    
+    .modal-dialog {
+        margin: 0.5rem !important;
+    }
+}

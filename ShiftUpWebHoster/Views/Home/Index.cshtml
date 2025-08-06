@@ -2,9 +2,9 @@
     ViewData["Title"] = "Start";
 }
 
-<div class="position-relative overflow-hidden p-3 p-md-5 text-center hero-section">
-    <div id="particles-js" class="particles-container"></div>
-    <div class="hero-content col-md-8 p-lg-5 mx-auto my-5" data-aos="fade-up" data-aos-duration="1200">
+<div class="text-center hero-section" id="hero">
+    <div class="d-flex justify-content-center align-items-center h-100 w-100">
+        <div class="hero-content p-lg-5">
         <h1 class="display-4 fw-bold text-white hero-title">Willkommen bei <span class="text-gradient">Lift Up WebWorks</span></h1>
         <p class="lead fw-normal hero-subtitle">Ihr Partner für Weblösungen, die mitdenken, überzeugen und begeistern!</p>
         <div class="hero-buttons">
@@ -12,11 +12,18 @@
             <a class="btn btn-outline-light btn-lg" href="#services">Unsere Leistungen</a>
         </div>
         
+        </div>
     </div>
 </div>
 
-<div class="container py-5">
-    <div class="row g-4 py-5" id="services">
+<div class="container py-5" id="services">
+    <div class="row pt-5 pb-0">
+        <div class="col-12 text-center mb-0">
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Unsere Leistungen & Services</h2>
+        </div>
+    </div>
+    
+    <div class="row g-4 content-close-to-title">
         <div class="col-md-4">
             <div class="card service-card h-100 shadow-sm" data-aos="fade-right" data-aos-duration="800" data-aos-delay="100">
                 <div class="card-icon">
@@ -73,13 +80,13 @@
         </div>
     </div>
 
-    <div class="row py-5">
-        <div class="col-12 text-center mb-5">
+    <div class="row pt-5 pb-0" style="margin-top: 20rem;">
+        <div class="col-12 text-center mb-0">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Unsere Geschichte & Werte</h2>
         </div>
     </div>
 
-    <div class="row py-3 founder-section">
+    <div class="row content-close-to-title founder-section">
         <div class="col-lg-6 d-flex">
             <div class="founder-content flex-fill" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
                 <div class="content-card">
@@ -174,14 +181,14 @@
             </div>
         </div>
     </div>
-    <div class="row py-5 motto-section">
-        <div class="col-12">
-            <div class="motto-container" data-aos="zoom-in" data-aos-duration="1000">
+    <div class="row pt-5 pb-0 motto-section">
+          <div class="col-12 content-close-to-title">
+              <div class="motto-container" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="motto-background"></div>
                 <div class="motto-content text-center">
                     <p class="company-motto">Lift Up WebWorks – <span class="motto-highlight">Ihr Partner für Weblösungen</span>, die <strong>mitdenken</strong>, <strong>überzeugen</strong> und <strong>begeistern</strong>!</p>
                     <div class="motto-action text-center">
-                        <a href="#" class="btn btn-light" style="font-size: 1.2rem; padding: 0.6rem 1.8rem;">Jetzt durchstarten</a>
+                        <a href="#hero" class="btn btn-light" style="font-size: 1.2rem; padding: 0.6rem 1.8rem;">Jetzt durchstarten</a>
                     </div>
                 </div>
             </div>

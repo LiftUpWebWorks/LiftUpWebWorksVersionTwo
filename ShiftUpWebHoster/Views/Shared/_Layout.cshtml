@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" style="margin: 0; padding: 0; width: 100%;">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,68 +15,17 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/css/custom.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Shift_Up_WebHoster.styles.css" asp-append-version="true" />
-
+    <link rel="stylesheet" href="~/ShiftUpWebHoster.styles.css" asp-append-version="true" />
+ 
     <link rel="stylesheet" href="~/css/fonts.css" asp-append-version="true" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <link rel="stylesheet" href="~/css/klaro.css" asp-append-version="true" />
-    <!-- Klaro Cookie Consent Manager -->
-    <script type="application/javascript" src="~/js/klaro-config.js"></script>
-    <script type="application/javascript" src="~/js/klaro.js"></script>
-    <script>
-        // Globale Funktion definieren, bevor DOMContentLoaded ausgelöst wird
-        function showCookieAtScrollPosition() {
-            console.log('Cookie-Einstellungen Button wurde geklickt');
-            if (window.klaro) {
-                // Immer anzeigen, wenn der Button geklickt wird, unabhängig vom Cookie-Status
-                window.klaro.show();
-                
-                // Dann die Position anpassen
-                setTimeout(function() {
-                    var cookieNotice = document.querySelector('.cookie-notice');
-                    if (cookieNotice) {
-                        // Sicherstellen, dass das Cookie-Banner sichtbar ist
-                        cookieNotice.classList.add('cookie-notice-visible');
-                        cookieNotice.style.display = 'block';
-                        cookieNotice.style.opacity = '1';
-                        cookieNotice.style.visibility = 'visible';
-                        // Zum Anfang der Seite scrollen, damit der Banner sichtbar ist
-                        window.scrollTo({ top: 0, behavior: 'auto' });
-                    } else {
-                        console.log('Cookie-Notice Element nicht gefunden');
-                    }
-                }, 100);
-            } else {
-                console.log('Klaro ist nicht verfügbar');
-                // Versuche, Klaro zu initialisieren, falls es noch nicht geladen ist
-                setTimeout(function() {
-                    if (window.klaro) {
-                        window.klaro.show();
-                        // Sicherstellen, dass das Cookie-Banner sichtbar ist
-                        var cookieNotice = document.querySelector('.cookie-notice');
-                        if (cookieNotice) {
-                            cookieNotice.classList.add('cookie-notice-visible');
-                            cookieNotice.style.display = 'block';
-                            cookieNotice.style.opacity = '1';
-                            cookieNotice.style.visibility = 'visible';
-                            // Zum Anfang der Seite scrollen, damit der Banner sichtbar ist
-                            window.scrollTo({ top: 0, behavior: 'auto' });
-                        }
-                    } else {
-                        console.log('Klaro konnte nicht initialisiert werden');
-                    }
-                }, 500);
-            }
-        }
-        
-        // Funktion global verfügbar machen
-        window.showCookieAtScrollPosition = showCookieAtScrollPosition;
-    </script>
+    
+
 </head>
-<body>
-    <header style="margin-bottom: 0;">
-        <nav class="navbar navbar-expand-sm navbar-dark border-bottom box-shadow">
+<body style="margin: 0; padding: 0; width: 100vw;">
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark sticky-top @(ViewContext.RouteData.Values["action"]?.ToString() != "Index" ? "navbar-white-bg" : "")">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><span class="text-gradient">Lift Up WebWorks</span></a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -99,11 +48,9 @@
             </div>
         </nav>
     </header>
-    <div class="container" style="margin-top: 0;">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <main role="main" style="width: 100vw; margin: 0; padding: 0;">
+        @RenderBody()
+    </main>
 
     <footer class="border-top footer bg-light py-4" style="margin-top: 1rem;">
         <div class="container">
@@ -138,7 +85,7 @@
                             <ul class="list-unstyled">
                                 <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Impressum">Impressum</a></li>
                                 <li><a class="text-muted" asp-area="" asp-controller="Home" asp-action="Privacy">Datenschutzerklärung</a></li>
-                                <li><a class="text-muted" href="javascript:window.showCookieAtScrollPosition();">Cookie-Einstellungen</a></li>
+                                <li><a class="text-muted" href="javascript:void(0);" onclick="showKlaroWithScroll();return false;">Cookie-Einstellungen</a></li>
                             </ul>
                         </div>
                     </div>
@@ -151,11 +98,13 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+    
     <script src="~/js/validation-localization.js" asp-append-version="true"></script>
-    <script src="~/js/particles.min.js" asp-append-version="true"></script>
-    <script src="~/js/particles-config.js" asp-append-version="true"></script>
+    <!-- Particles.js entfernt -->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
@@ -167,6 +116,29 @@
                     offset: 50,
                     delay: 100,
                     anchorPlacement: 'top-bottom'
+                });
+                
+                // Anker-Links mit angepasstem Scrollverhalten
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        
+                        if (targetElement) {
+                            // Berechne die Position, zu der gescrollt werden soll
+                            const headerOffset = 80; // Offset für Header
+                            const elementPosition = targetElement.getBoundingClientRect().top;
+                            const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                            
+                            // Scrolle zur berechneten Position
+                            window.scrollTo({
+                                top: offsetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
                 });
             });
         function activateJourneyItem(element) {
@@ -198,16 +170,16 @@
             const style = document.createElement('style');
             style.textContent = `
                 .heading-active {
-                    background: linear-gradient(135deg, rgba(13, 110, 253, 0.1), transparent);
-                    border-color: #0d6efd;
-                    box-shadow: 0 8px 20px rgba(13, 110, 253, 0.15);
+                    background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), transparent);
+                    border-color: #2e8b57;
+                    box-shadow: 0 8px 20px rgba(46, 139, 87, 0.15);
                     transform: translateY(-5px);
                 }
                 
                 .section-active {
-                    border: 2px solid rgba(13, 110, 253, 0.3);
+                    border: 2px solid rgba(46, 139, 87, 0.3);
                     border-radius: 1rem;
-                    box-shadow: 0 0 15px rgba(13, 110, 253, 0.2);
+                    box-shadow: 0 0 15px rgba(46, 139, 87, 0.2);
                 }
             `;
             document.head.appendChild(style);
@@ -274,51 +246,20 @@
         });
     </script>
     <script src="~/js/validation-localization.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Klaro manuell initialisieren
-            if (window.klaro) {
-                window.klaro.setup(klaroConfig);
-                console.log('Klaro wurde erfolgreich initialisiert');
-                
-                // Überprüfen, ob der Privacy-Link korrekt funktioniert
-                console.log('Privacy Policy URL:', klaroConfig.privacyPolicy);
-                console.log('Privacy Policy URL in translations:', klaroConfig.translations.de.privacyPolicyUrl);
-                
-                // Sicherstellen, dass das Cookie-Banner sofort sichtbar ist
-                var cookieNotice = document.querySelector('.cookie-notice');
-                if (cookieNotice) {
-                    cookieNotice.classList.add('cookie-notice-visible');
-                    cookieNotice.style.display = 'block';
-                    cookieNotice.style.opacity = '1';
-                    cookieNotice.style.visibility = 'visible';
-                }
-            } else {
-                // Fallback, falls Klaro nicht sofort verfügbar ist
-                setTimeout(function() {
-                    if (window.klaro) {
-                        window.klaro.setup(klaroConfig);
-                        console.log('Klaro wurde mit Verzögerung initialisiert');
-                        
-                        // Überprüfen, ob der Privacy-Link korrekt funktioniert
-                        console.log('Privacy Policy URL:', klaroConfig.privacyPolicy);
-                        console.log('Privacy Policy URL in translations:', klaroConfig.translations.de.privacyPolicyUrl);
-                        
-                        // Sicherstellen, dass das Cookie-Banner sofort sichtbar ist
-                        var cookieNotice = document.querySelector('.cookie-notice');
-                        if (cookieNotice) {
-                            cookieNotice.classList.add('cookie-notice-visible');
-                            cookieNotice.style.display = 'block';
-                            cookieNotice.style.opacity = '1';
-                            cookieNotice.style.visibility = 'visible';
-                        }
-                    } else {
-                        console.log('Klaro konnte nicht initialisiert werden');
-                    }
-                }, 1000);
-            }
-        });
-    </script>
+    <script type="text/plain" data-type="text/javascript" data-name="aos" data-src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<script type="text/javascript" src="~/js/klaro-config.js" asp-append-version="true"></script>
+<script defer type="application/javascript" src="https://cdn.kiprotect.com/klaro/v0.7/klaro.js"></script>
+// Remove: <script src="~/js/cookie-consent.js" asp-append-version="true"></script>
+
+<script>
+function showKlaroWithScroll() {
+    klaro.show();
+    const middle = (document.documentElement.scrollHeight - window.innerHeight) / 2;
+    window.scrollTo({top: middle, behavior: 'smooth'});
+}
+</script>
