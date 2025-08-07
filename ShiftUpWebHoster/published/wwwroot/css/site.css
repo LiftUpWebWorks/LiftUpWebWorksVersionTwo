@@ -52,7 +52,9 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
   /* Grundlegende Eigenschaften für scharfe Darstellung */
   -webkit-font-smoothing: antialiased !important;
   -moz-osx-font-smoothing: grayscale !important;
@@ -70,6 +72,9 @@ body {
   font-smooth: always !important;
   -webkit-text-stroke: 0.1px !important;
   letter-spacing: 0.01em !important;
+  width: 100vw;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* Footer-Links Styling */
