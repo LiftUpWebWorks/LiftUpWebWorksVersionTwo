@@ -14,9 +14,11 @@
         
         </div>
     </div>
+
 </div>
 
-<div class="container py-5" id="services">
+
+<div class="container py-5" id="services" style="margin-top: 8rem;">
     <div class="row pt-5 pb-0">
         <div class="col-12 text-center mb-0">
             <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Unsere Leistungen & Services</h2>
@@ -80,15 +82,34 @@
         </div>
     </div>
 
-    <div class="row pt-5 pb-0" style="margin-top: 20rem;">
+    <div class="container" id="about">
+</div>
+
+<div class="video-background-container position-relative">
+    <div class="row pt-2 pb-0" style="margin-top: 1rem; position: relative; z-index: 3;">
         <div class="col-12 text-center mb-0">
-            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800">Unsere Geschichte & Werte</h2>
+            <h2 class="section-title" data-aos="fade-up" data-aos-duration="800" style="color: white;">Unsere Geschichte & Werte</h2>
         </div>
     </div>
-
+    <video autoplay muted loop class="video-background" playsinline>
+        <source src="/video/14143410_3840_2160_25fps.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="video-overlay"></div>
+    <div class="container" style="position: relative; z-index: 3;">
     <div class="row content-close-to-title founder-section">
-        <div class="col-lg-6 d-flex">
-            <div class="founder-content flex-fill" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200">
+        <div class="col-12 mb-1">
+                <ul class="nav nav-tabs" id="geschichteTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="founder-tab" data-bs-toggle="tab" data-bs-target="#founder" type="button" role="tab" aria-controls="founder" aria-selected="true"><i class="fas fa-lightbulb me-2" style="color: #FFD700;"></i>Innovation trifft Leidenschaft</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="company-tab" data-bs-toggle="tab" data-bs-target="#company" type="button" role="tab" aria-controls="company" aria-selected="false"><i class="fas fa-star me-2" style="color: #FFD700;"></i>Digitale Exzellenz neu definiert</button>
+                </li>
+            </ul>
+        </div>
+        <div class="tab-content" id="geschichteTabsContent">
+            <div class="tab-pane fade show active" id="founder" role="tabpanel" aria-labelledby="founder-tab">
                 <div class="content-card">
                     <div class="card-header">
                         <div class="header-icon"><i class="fas fa-lightbulb"></i></div>
@@ -96,21 +117,21 @@
                     </div>
                     <div class="founder-journey">
                         <div class="journey-item active" onmouseover="activateJourneyItem(this)">
-                            <div class="journey-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="journey-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.438 60.438 0 0 0-.491 6.347A48.62 48.62 0 0 1 12 20.904a48.62 48.62 0 0 1 8.232-4.41 60.46 60.46 0 0 0-.491-6.347m-15.482 0a50.636 50.636 0 0 0-2.658-.813A59.906 59.906 0 0 1 12 3.493a59.903 59.903 0 0 1 10.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.717 50.717 0 0 1 12 13.489a50.702 50.702 0 0 1 7.74-3.342M6.75 15a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5Zm0 0v-3.675A55.378 55.378 0 0 1 12 8.443m-7.007 11.55A5.981 5.981 0 0 0 6.75 15.75v-3.675" /></svg></div>
                             <div class="journey-content">
                                 <h4>Duales Studium & Tech-Enthusiast</h4>
                                 <p>Mit der perfekten Kombination aus akademischem Wissen und praktischer Erfahrung bringe ich frische Perspektiven in die Webentwicklung. Meine Leidenschaft für Technologie treibt mich an, innovative Lösungen zu entwickeln.</p>
                             </div>
                         </div>
                         <div class="journey-item" onmouseover="activateJourneyItem(this)">
-                            <div class="journey-icon"><i class="fas fa-code"></i></div>
+                            <div class="journey-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg></div>
                             <div class="journey-content">
                                 <h4>Erfahrener Entwickler</h4>
                                 <p>Durch jahrelange Erfahrung in verschiedenen IT-Projekten weiß ich genau, worauf es bei modernen digitalen Lösungen ankommt. Qualität und Nachhaltigkeit stehen dabei immer im Fokus.</p>
                             </div>
                         </div>
                         <div class="journey-item" onmouseover="activateJourneyItem(this)">
-                            <div class="journey-icon"><i class="fas fa-rocket rocket-icon"></i></div>
+                            <div class="journey-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.59 14.37a6 6 0 0 1-5.84 7.38v-4.8m5.84-2.58a14.98 14.98 0 0 0 6.16-12.12A14.98 14.98 0 0 0 9.631 8.41m5.96 5.96a14.926 14.926 0 0 1-5.841 2.58m-.119-8.54a6 6 0 0 0-7.381 5.84h4.8m2.581-5.84a14.927 14.927 0 0 0-2.58 5.84m2.699 2.7c-.103.021-.207.041-.311.06a15.09 15.09 0 0 1-2.448-2.448 14.798 14.798 0 0 1 .06-.312m-2.24 2.39a4.493 4.493 0 0 0-1.757 4.306 4.493 4.493 0 0 0 4.306-1.758M16.5 9a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" /></svg></div>
                             <div class="journey-content">
                                 <h4>Zukunftsgestalter</h4>
                                 <p>Mit einem klaren Blick für Innovation und dem Mut, neue Wege zu gehen, entwickle ich Lösungen, die nicht nur heute funktionieren, sondern auch für die Anforderungen von morgen gerüstet sind.</p>
@@ -129,9 +150,7 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="col-lg-6 d-flex">
-            <div class="company-content flex-fill" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="tab-pane fade" id="company" role="tabpanel" aria-labelledby="company-tab">
                 <div class="content-card">
                     <div class="card-header">
                         <div class="header-icon"><i class="fas fa-star"></i></div>
@@ -139,21 +158,21 @@
                     </div>
                     <div class="company-values">
                         <div class="value-item active" onmouseover="activateValueItem(this)">
-                            <div class="value-icon"><i class="fas fa-heart"></i></div>
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" /></svg></div>
                             <div class="value-content">
                                 <h4>Leidenschaft & Innovation</h4>
                                 <p>Als junges, dynamisches Unternehmen verbinden wir moderne IT-Dienstleistungen mit Herz und Verstand. Unsere Leidenschaft für Technologie spiegelt sich in jedem Projekt wider.</p>
                             </div>
                         </div>
                         <div class="value-item" onmouseover="activateValueItem(this)">
-                            <div class="value-icon"><i class="fas fa-users"></i></div>
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" /></svg></div>
                             <div class="value-content">
                                 <h4>Kundenorientierung</h4>
                                 <p>Bei uns sind Sie keine Nummer. Wir bieten maßgeschneiderte Webseiten und persönlichen Support, der sich wirklich an Ihren Bedürfnissen orientiert. Wir hören zu, beraten ehrlich und setzen Ihre Vision um.</p>
                             </div>
                         </div>
                         <div class="value-item" onmouseover="activateValueItem(this)">
-                            <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div class="value-icon"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.825 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" /></svg></div>
                             <div class="value-content">
                                 <h4>Qualität & Zuverlässigkeit</h4>
                                 <p>Mit leistungsstarkem Webhosting und zukunftssicheren Technologien sorgen wir dafür, dass Ihre Website schnell, sicher und zuverlässig funktioniert – heute und morgen.</p>
@@ -181,9 +200,12 @@
             </div>
         </div>
     </div>
-    <div class="row pt-5 pb-0 motto-section">
-          <div class="col-12 content-close-to-title">
-              <div class="motto-container" data-aos="zoom-in" data-aos-duration="1000">
+    </div>
+    </div>
+<div class="container-fluid py-5 motto-section" style="position: relative; z-index: 3;">
+    <div class="row">
+        <div class="col-12 content-close-to-title">
+            <div class="motto-container" data-aos="zoom-in" data-aos-duration="1000">
                 <div class="motto-background"></div>
                 <div class="motto-content text-center">
                     <p class="company-motto">Lift Up WebWorks – <span class="motto-highlight">Ihr Partner für Weblösungen</span>, die <strong>mitdenken</strong>, <strong>überzeugen</strong> und <strong>begeistern</strong>!</p>
@@ -194,4 +216,5 @@
             </div>
         </div>
     </div>
+</div>
 </div>

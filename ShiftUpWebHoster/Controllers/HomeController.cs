@@ -55,7 +55,7 @@ namespace Shift_Up_WebHoster.Controllers
                         messageBody
                     );
 
-                    TempData["SuccessMessage"] = "Vielen Dank für Ihre Bewertung!";
+                    TempData["SuccessMessage"] = "Danke für Ihre Bewertung";
                     return RedirectToAction(nameof(Bewertungen));
                 }
                 catch (Exception ex)
@@ -99,7 +99,7 @@ namespace Shift_Up_WebHoster.Controllers
                     var messageBody = $"Name: {model.Name}\nE-Mail: {model.Email}\nTelefon: {model.Phone}\n\nNachricht:\n{model.Message}";
                     await _emailService.SendEmailAsync(model.Email, model.Subject, messageBody);
 
-                    TempData["SuccessMessage"] = "Ihre Nachricht wurde erfolgreich gesendet.";
+                    TempData["SuccessMessage"] = "Danke für Ihre Nachricht";
                     return RedirectToAction(nameof(Kontakt));
                 }
                 catch (Exception ex)

@@ -23,7 +23,7 @@
     
 
 </head>
-<body style="margin: 0; padding: 0; width: 100vw;">
+<body style="margin: 0; padding: 0; width: 100%; overflow-x: hidden;">
     <header>
         <nav class="navbar navbar-expand-sm navbar-dark sticky-top @(ViewContext.RouteData.Values["action"]?.ToString() != "Index" ? "navbar-white-bg" : "")">
             <div class="container">
@@ -48,7 +48,7 @@
             </div>
         </nav>
     </header>
-    <main role="main" style="width: 100vw; margin: 0; padding: 0;">
+    <main role="main" style="width: 100%; margin: 0; padding: 0;">
         @RenderBody()
     </main>
 
@@ -128,7 +128,7 @@
                         
                         if (targetElement) {
                             // Berechne die Position, zu der gescrollt werden soll
-                            const headerOffset = 80; // Offset für Header
+                            const headerOffset = 120; // Offset für Header
                             const elementPosition = targetElement.getBoundingClientRect().top;
                             const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                             
@@ -259,7 +259,6 @@
 <script>
 function showKlaroWithScroll() {
     klaro.show();
-    const middle = (document.documentElement.scrollHeight - window.innerHeight) / 2;
-    window.scrollTo({top: middle, behavior: 'smooth'});
+    window.scrollTo({top: 0, behavior: 'smooth'});
 }
 </script>

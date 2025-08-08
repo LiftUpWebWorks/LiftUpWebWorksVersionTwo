@@ -1,6 +1,11 @@
 # .env-Datei mit Geheimdaten
 .env
 
+# Publish folders
+published/
+publish*/
+ShiftUpWebHoster/publish*/
+
 # User-specific files
 *.rsuser
 *.suo

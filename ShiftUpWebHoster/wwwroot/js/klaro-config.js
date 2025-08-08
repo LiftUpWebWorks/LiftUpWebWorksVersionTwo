@@ -15,6 +15,9 @@ var klaroConfig = {
     hideLearnMore: false,
     noticeAsModal: false,
     disablePoweredBy: true,
+    // Position des Banners festlegen (top oder bottom)
+    position: 'top',
+    additionalClass: 'cookie-notice-visible',
     translations: {
         de: {
             privacyPolicyUrl: '/datenschutz',

@@ -11,19 +11,19 @@ body {
     padding: 0;
     padding-top: 0;
     min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    background: transparent;
     position: relative;
+    overflow-x: hidden;
 }
 
 .section-title {
     position: relative;
     display: inline-block;
-    margin-bottom: 2.5rem; /* Erhöhter Abstand nach unten */
+    margin-bottom: 2rem; /* Reduzierter Whitespace */
     color: #2e8b57; /* Sea Green */
-    font-weight: 700;
-    padding: 0.5rem 1.5rem;
+    font-weight: 800;
+    font-size: 2.5rem;
+    padding: 1rem 2rem;
     background: linear-gradient(135deg, rgba(46, 139, 87, 0.1), transparent); /* Sea Green mit Transparenz */
     border-radius: 2rem;
     box-shadow: 0 5px 15px rgba(46, 139, 87, 0.1); /* Sea Green mit Transparenz */
@@ -49,23 +49,121 @@ body {
     margin-top: 0; /* Entfernung des negativen Abstands */
 }
 
+/* Tab Styles */
+.nav-tabs {
+    border-bottom: none;
+    margin-bottom: 2rem;
+    width: 100%;
+    display: flex;
+    gap: 15px;
+    position: relative;
+    z-index: 10;
+    margin-top: 1rem;
+}
+
+.nav-tabs .nav-item {
+    margin-bottom: 0;
+}
+
+.nav-link {
+    border: 2px solid #2e8b57;
+    color: white;
+    font-weight: 600;
+    padding: 1.5rem 3rem;
+    border-radius: 15px;
+    background-color: rgba(46, 139, 87, 0.7);
+    backdrop-filter: blur(5px);
+    margin: 0 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    font-size: 5.5rem;
+}
+
+.nav-link:hover {
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.8), rgba(60, 179, 113, 0.8));
+    color: white;
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.nav-link.active {
+    color: white;
+    background: linear-gradient(135deg, #2e8b57, #3cb371);
+    border: 2px solid #2e8b57;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+    transform: translateY(-3px);
+}
+
 /* Adjust container padding for better spacing */
 .container.py-5 {
     padding-top: 4rem !important;
     padding-bottom: 1rem !important;
 }
 
+/* Video Background */
+.video-background-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin-bottom: 0;
+    margin-top: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
+    min-height: 600px;
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    background-color: #2e8b57; /* Fallback-Farbe, falls Video nicht lädt */
+}
+
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.5), rgba(60, 179, 113, 0.5));
+    z-index: 2;
+}
+
+/* Tab Content Styles */
+.tab-content {
+    position: relative;
+    z-index: 10;
+    padding: 1rem;
+    background-color: transparent;
+    border-radius: 0 0 8px 8px;
+}
+
 /* Founder and Company Section Styles */
 .content-card {
     position: relative;
-    background: linear-gradient(145deg, #ffffff, #f5f7fa);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border-radius: 8px; /* Weniger Rundung */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     padding: 2rem;
     height: 100%;
     overflow: hidden;
     transition: all 0.4s ease;
-    z-index: 1;
+    z-index: 5;
+    background: transparent;
+    border: none;
+}
+
+#founder .content-card, #company .content-card {
+    background: transparent;
+    color: white;
 }
 
 .content-card::before {
@@ -80,8 +178,8 @@ body {
 }
 
 .content-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px) scale(1.02); /* Leichtes Aufpoppen */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); /* Stärkerer Schatten */
 }
 
 .card-header {
@@ -96,13 +194,13 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     background: linear-gradient(135deg, #2e8b57, #3cb371);
     border-radius: 50%;
-    margin-right: 1rem;
+    margin-right: 2.5rem;
     color: white;
-    font-size: 1.5rem;
+    font-size: 2rem;
     box-shadow: 0 5px 15px rgba(46, 139, 87, 0.3);
     animation: pulse-icon 2s infinite;
 }
@@ -111,6 +209,27 @@ body {
 .header-icon .fa-lightbulb,
 .header-icon .fa-star {
     color: #FFD700; /* Gold/Gelb */
+}
+
+/* Anpassungen für Text über Video-Hintergrund */
+.founder-journey h4, .company-values h4, 
+.card-header h2, .stack-title, .highlights-title,
+.journey-item p, .value-item p {
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tech-badge, .highlight-badge {
+    background: rgba(46, 139, 87, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 @keyframes pulse-icon {
@@ -122,12 +241,13 @@ body {
 /* Journey Items Styles */
 .journey-item, .value-item {
     position: relative;
-    padding: 1rem 0;
-    margin-bottom: 1rem;
+    padding: 1.5rem 0;
+    margin-bottom: 1.5rem;
     border-left: 3px solid transparent;
-    padding-left: 1rem;
+    padding-left: 1.5rem;
     transition: all 0.3s ease;
     display: block;
+    font-size: 1.8rem;
 }
 
 .journey-item.active, .value-item.active {
@@ -165,8 +285,9 @@ body {
 }
 
 .journey-item h4, .value-item h4 {
-    margin-bottom: 0.5rem;
-    font-weight: 600;
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+    font-size: 1.2rem; /* Unterschiedliche Font-Größen */
     color: #333;
     transition: all 0.3s ease;
 }
@@ -178,7 +299,8 @@ body {
 
 .journey-item p, .value-item p {
     margin-bottom: 0;
-    color: #666;
+    color: #444; /* Höherer Kontrast */
+    font-size: 1.1rem; /* Variierte Font-Größen */
     transition: all 0.3s ease;
 }
 
@@ -189,26 +311,35 @@ body {
 /* Tech Stack and Highlights Styles */
 .stack-title, .highlights-title {
     font-weight: 600;
-    color: #2e8b57; /* Sea Green */
+    color: white;
     margin-bottom: 0.75rem;
     position: relative;
     display: inline-block;
-    padding-bottom: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: rgba(46, 139, 87, 0.8);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 /* Motto Section Styles */
 .motto-section {
     position: relative;
     margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-bottom: 0;
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
+    padding: 1.5rem 0;
 }
 
 .motto-container {
     position: relative;
-    padding: 3rem 2rem;
+    padding: 1.5rem 1rem;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .motto-background {
@@ -217,8 +348,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, #2e8b57, #3cb371);
-    opacity: 0.9;
+    background: linear-gradient(135deg, rgba(46, 139, 87, 1.0), rgba(60, 179, 113, 1.0));
+    opacity: 1.0;
     z-index: -1;
 }
 
@@ -364,14 +495,14 @@ body {
 
 .tech-badge {
     display: inline-block;
-    padding: 0.4rem 0.8rem;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    padding: 0.6rem 1.2rem;
+    background: rgba(46, 139, 87, 0.8);
     border-radius: 20px;
-    font-size: 0.85rem;
-    color: #495057;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    font-size: 1.2rem;
+    color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .tech-badge:hover {
@@ -385,12 +516,13 @@ body {
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
-    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.8), rgba(60, 179, 113, 0.8));
     border-radius: 25px;
     margin-bottom: 0.5rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     transition: all 0.3s ease;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
 }
 
 .highlight-badge i {
@@ -435,13 +567,12 @@ body {
 }
 
 .navbar {
-    background: rgba(26, 26, 26, 0.95);
+    background: rgb(26, 26, 26);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     width: 100%;
     z-index: 1050;
     padding: 0.25rem 0;
     min-height: 48px;
-    backdrop-filter: blur(8px);
     position: sticky;
     top: 0;
 }
@@ -690,31 +821,29 @@ body {
 /* Hero-Bereich */
 .hero-section {
     position: relative;
-    min-height: 100vh;
-    height: 100vh;
+    min-height: 60vh;
+    height: 60vh;
     width: 100%;
-    margin: 0;
+    margin: -20vh 0 0 0;
     padding: 0;
-    padding-top: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     overflow: hidden;
     background: transparent;
-    margin-top: 0;
 }
 
 /* Neues Hintergrundbild */
 .hero-section::before {
     content: '';
     position: absolute;
-    top: 0;
+    top: -20vh;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 120%;
     background-image: url('../images/herobackground_new.jpg?v=1');
     background-size: cover;
-    background-position: center center;
+    background-position: center bottom;
     background-repeat: no-repeat;
     z-index: -1;
     opacity: 1;
@@ -727,7 +856,7 @@ body {
 .hero-content {
     position: absolute;
     z-index: 2;
-    padding: 3rem;
+    padding: 2rem;
     border-radius: 1rem;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(15px);
@@ -928,6 +1057,7 @@ body {
     box-shadow: 0 15px 30px rgba(0,0,0,0.1), 0 5px 15px rgba(46, 139, 87, 0.1);
     transform-style: preserve-3d;
     perspective: 1000px;
+    padding: 3rem;
 }
 
 .service-card::before {
@@ -990,7 +1120,7 @@ body {
 .card-body {
     position: relative;
     z-index: 1;
-    padding-bottom: 30px;
+    padding-bottom: 50px;
 }
 
 .service-card .card-icon {
@@ -1001,8 +1131,8 @@ body {
     box-shadow: 0 15px 30px rgba(46, 139, 87, 0.15);
     position: relative;
     overflow: hidden;
-    margin-bottom: 2rem;
-    color: white; /* Alle Icons weiß */
+    margin-bottom: 3rem;
+    color: #2e8b57; /* Alle Icons grün */
 }
 
 .service-card .card-icon::before {
@@ -1030,14 +1160,14 @@ body {
 
 .service-card .card-icon i {
     font-size: 2.5rem;
-    color: white; /* Alle Icons weiß */
+    color: #90EE90; /* Noch helleres Grün für bessere Sichtbarkeit */
     transition: all 0.5s ease;
 }
 
 .service-card:hover .card-icon i {
     transform: translateY(-5px) scale(1.2);
     animation: icon-float 2s ease infinite;
-    color: white; /* Alle Icons weiß */
+    color: #90EE90; /* Helleres Grün bei Hover */
 }
 
 .card-features {
@@ -1140,12 +1270,12 @@ body {
     align-items: center;
     height: 80px;
     overflow: hidden;
-    color: white; /* Alle Icons weiß */
+    color: #2e8b57; /* Alle Icons grün */
 }
 
 .card-icon i {
     font-size: 2.5rem;
-    color: white; /* Alle Icons weiß */
+    color: #90EE90; /* Helleres Grün */
     transition: all 0.5s ease;
     transform: translateY(0);
 }
@@ -1175,7 +1305,7 @@ body {
 .card:hover .card-icon i {
     transform: translateY(-5px) scale(1.2);
     animation: icon-float 2s ease infinite;
-    color: white; /* Alle Icons weiß */
+    color: #90EE90; /* Helleres Grün für bessere Sichtbarkeit */
 }
 
 @keyframes icon-float {
@@ -1645,7 +1775,7 @@ body {
 
 .value-item i {
     font-size: 1.4rem;
-    color: white; /* Alle Icons weiß */
+    color: #2e8b57; /* Alle Icons grün */
     display: inline-block;
     width: 1.4rem;
     text-align: center;
@@ -1663,22 +1793,42 @@ body {
 
 .value-item i.fa-heart {
     animation: none;
-    color: white;
+    color: #2e8b57;
 }
 
 .value-item.active i.fa-heart {
     animation: heartbeat 1.5s infinite;
-    color: #ff0000;
+    color: #3CB371 !important;
 }
 
 .value-item.active i {
-    color: white; /* Alle Icons weiß */
+    color: #2e8b57; /* Alle Icons grün */
+}
+
+.value-item i {
+    color: #2e8b57 !important; /* Grün erzwingen */
+}
+
+.value-item.active i {
+    color: #3CB371 !important; /* Helleres Grün bei Aktiv erzwingen */
+}
+
+.journey-item i {
+    color: #2e8b57 !important; /* Grün erzwingen */
+}
+
+.journey-item.active i {
+    color: #3CB371 !important; /* Helleres Grün bei Aktiv erzwingen */
+}
+
+.service-card .card-icon i {
+    color: #2e8b57; /* Dunkelgrün für Unsere Leistungen Icons */
 }
 
 /* Styling für das Kundenorientierung-Icon */
 .value-item i.fa-users {
     position: relative;
-    color: white;
+    color: #2e8b57;
     display: inline-block;
     width: 1.4rem;
     text-align: center;
@@ -1728,7 +1878,7 @@ body {
 
 .value-item i.fa-rocket {
     transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    color: white;
+    color: #2e8b57;
 }
 
 .value-item:hover i.fa-rocket {
@@ -1902,37 +2052,43 @@ body {
     align-items: center;
     padding: 0.5rem 1rem;
     margin: 0.5rem;
-    background: rgba(46, 139, 87, 0.1); /* Sea Green mit Transparenz */
+    background: rgba(46, 139, 87, 0.8);
+    color: white;
     border-radius: 2rem;
-    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(46, 139, 87, 0.1);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.highlight-badge:hover {
+    transform: translateY(-5px);
+    background: rgba(46, 139, 87, 0.2);
+    box-shadow: 0 8px 25px rgba(46, 139, 87, 0.15);
+    border-color: rgba(46, 139, 87, 0.3);
 }
 
 .highlight-badge i {
     margin-right: 0.5rem;
-    color: #2e8b57;
     transition: all 0.3s ease;
-}
-
-.highlight-badge span {
-    color: #2e8b57; /* Sea Green */
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.highlight-badge:hover {
-    background: rgba(46, 139, 87, 0.2); /* Sea Green mit Transparenz */
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(46, 139, 87, 0.15); /* Sea Green mit Transparenz */
-    border-color: #2e8b57; /* Sea Green */
+    color: white;
 }
 
 .highlight-badge:hover i {
     transform: scale(1.2) rotate(360deg);
+    color: white;
+}
+
+.highlight-badge span {
+    transition: all 0.3s ease;
+    color: white;
 }
 
 .highlight-badge:hover span {
     transform: translateX(5px);
+    color: white;
 }
 
 .tech-badge {
@@ -1940,12 +2096,12 @@ body {
     align-items: center;
     padding: 0.5rem 1rem;
     margin: 0.5rem;
-    background: rgba(46, 139, 87, 0.1);
-    color: #2e8b57;
+    background: rgba(46, 139, 87, 0.8);
+    color: white;
     border-radius: 2rem;
     /* Entfernt den Unschärfe-Effekt */
     /* backdrop-filter: blur(10px); */
-    border: 1px solid rgba(46, 139, 87, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     box-shadow: 0 2px 8px rgba(46, 139, 87, 0.1);
@@ -2032,25 +2188,25 @@ body {
 
 .journey-item i {
     font-size: 1.4rem;
-    color: white; /* Icon-Farbe auf weiß gesetzt */
+    color: #2e8b57; /* Icon-Farbe auf grün gesetzt */
 }
 
 .rocket-icon {
     transition: transform 0.5s ease, color 0.3s ease;
     display: inline-block;
-    color: white; /* Icon-Farbe auf weiß gesetzt */
+    color: #2e8b57; /* Icon-Farbe auf grün gesetzt */
 }
 
 .journey-item .rocket-icon {
     transition: transform 0.5s ease, color 0.3s ease;
     display: inline-block;
     transform-origin: center;
-    color: white; /* Icon-Farbe auf weiß gesetzt */
+    color: #2e8b57; /* Icon-Farbe auf grün gesetzt */
 }
 
 .journey-item:hover .rocket-icon {
     transform: translate(10px, -10px) rotate(45deg);
-    color: white; /* Icon-Farbe auf weiß gesetzt */
+    color: #2e8b57; /* Icon-Farbe auf grün gesetzt */
     animation: rocketFlame 1s infinite alternate;
 }
 
@@ -2087,4 +2243,8 @@ body {
     .card {
         margin-bottom: 1rem;
     }
+}
+
+#services {
+    scroll-margin-top: 120px;
 }

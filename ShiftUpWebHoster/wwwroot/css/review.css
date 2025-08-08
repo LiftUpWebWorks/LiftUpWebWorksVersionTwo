@@ -14,23 +14,22 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: #2e8b57; /* Kräftiges Grün für besseren Kontrast mit weißen Icons */
+    background: #ffffff; /* Hintergrund auf weiß für besseren Kontrast mit grünen Icons */
     transition: transform 0.3s ease, background 0.3s ease;
     /* Verhindert Unschärfe bei Transformationen */
     backface-visibility: hidden;
-    color: white; /* Icon-Farbe auf weiß gesetzt */
+    color: #2e8b57; /* Icon-Farbe auf grün gesetzt */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     transform: translateZ(0); /* Hardware-Beschleunigung erzwingen */
     filter: blur(0);
     will-change: transform, background;
-    animation: pulse-bg 2s infinite;
 }
 
 /* Überschreibe die Bootstrap text-primary Klasse für Icons in quality-icon */
 .quality-icon .text-primary,
 .quality-icon i {
-    color: white !important;
+    color: #2e8b57 !important;
 }
 
 /* Animation für das Zahnrad */
@@ -55,9 +54,9 @@
 }
 
 @keyframes pulse-bg {
-    0% { background: #2e8b57; }
-    50% { background: #3cb371; } /* Etwas helleres Grün */
-    100% { background: #2e8b57; }
+    0% { background: #ffffff; }
+    50% { background: #90EE90; } /* Etwas helleres Grün */
+    100% { background: #ffffff; }
 }
 
 .card {
@@ -103,6 +102,7 @@
     position: absolute;
     left: 0;
     top: 3px;
+    color: #2e8b57;
 }
 
 /* Modal Styling */
