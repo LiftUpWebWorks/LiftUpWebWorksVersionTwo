@@ -328,8 +328,8 @@ body {
     position: relative;
     margin-top: 2rem;
     margin-bottom: 0;
-    background: linear-gradient(135deg, #f5f7fa 0%, #e4e9f2 100%);
-    padding: 1.5rem 0;
+    background: linear-gradient(135deg, rgba(46, 139, 87, 0.4), rgba(60, 179, 113, 0.4));
+    padding: 4rem 0 6rem 0;
 }
 
 .motto-container {
